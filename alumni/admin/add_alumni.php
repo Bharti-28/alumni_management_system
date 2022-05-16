@@ -1,5 +1,19 @@
 <?Php
   require("code.php"); 
+
+  $firstname='';
+  $course_graduate='';
+
+  if(isset($_GET['id'])) {
+        $id = mysqli_real_escape_string($connection, $_GET['id']);
+        $res = mysqli_query($connection, "select * from alumnus_bio where id= '$id' ");
+
+        $row = mysqli_fetch_assoc($res);
+        $firstname = $row['firstname'];
+        $course_graduate = $row['course_graduate'];
+
+  }
+
   if(isset($_POST['firstname'], $_POST['course_graduate'])) {
         $firstname=mysqli_real_escape_string($connection,$_POST['firstname']);
         $course_graduate=mysqli_real_escape_string($connection,$_POST['course_graduate']);
@@ -40,13 +54,13 @@
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Name</label>
-				<input type="text" name="firstname"  class="form-control border border-primary" value="">
+				<input type="text" value="<?Php echo $firstname?>" name="firstname"  class="form-control border border-primary" placeholder="Enter your name" >
 			</div>
 		</div> <br>
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Course Graduate</label>
-				<input type="text" name="course_graduate"  class="form-control border border-primary" value="">
+				<input type="text"  value="<?Php echo $course_graduate?>" name="course_graduate"  class="form-control border border-primary" placeholder="Enter your course">
 			</div>
 		</div><br>
 		

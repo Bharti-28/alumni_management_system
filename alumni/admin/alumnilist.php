@@ -30,7 +30,7 @@ mysqli_query($connection, "DELETE from alumnus_bio where id='$id' ");
 				<div class="card-header">
 					<h5 class="fw-bold">List of Alumni</h5>
 					<div class="d-md-flex justify-content-md-end">
-        <button type="submit" class="btn btn-primary btn-sm col-sm-2"><a href="add_alumni.php">+New Alumni</a></button>
+        <button type="submit" class="btn btn-primary btn-sm col-sm-2"><a href="add_alumni.php">+ New Alumni</a></button>
         </div>
 				</div>
 				<div class="card-body">
@@ -87,6 +87,7 @@ mysqli_query($connection, "DELETE from alumnus_bio where id='$id' ");
 								</td>
 								<td class="text-center">
 									<button class="btn btn-sm btn-primary view_alumni" type="button" data-id="<?php echo $row['id'] ?>" ><a href="viewalumni.php">View</a></button>
+									<button class="btn btn-sm btn-success edit_alumni" type="button"><a href="add_alumni.php?id=<?Php echo $row['id'] ?> &type=delete">Edit</a></button>
 									<button class="btn btn-sm btn-danger delete_alumni" type="button"><a href="alumnilist.php?id=<?Php echo $row['id'] ?> &type=delete">Delete</a></button>
 								</td>
 							</tr>

@@ -65,7 +65,7 @@
 				 		<?php echo $type[$row['type']] ?>
 				 	</td>
 					 <td class="text-center">
-						<button class="btn btn-sm btn-success edit_event" type="button" data-id="<?php echo $row['id'] ?>" >Edit</button>
+						<button class="btn btn-sm btn-success edit_event" type="button" style="height: 2rem;" ><a href="add_user.php?id=<?Php echo $row['id'] ?> &type=edit">Edit</a></button>
 						<button class="btn btn-sm btn-danger delete_event" type="button" style="height: 2rem;"><a href="users.php?id=<?Php echo $row['id'] ?> &type=delete">Delete</a></button>
 						</td>
 				 </tr>

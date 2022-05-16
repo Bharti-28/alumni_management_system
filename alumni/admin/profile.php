@@ -28,40 +28,40 @@
                 <h5 class="text-center fw-bold">User Profile</h5><br>
                 <div class="form-group">
 					<label class="control-label fw-bold">User Name</label>
-					<input type="text" class="form-control border border-primary" id="name" name="name" required>
+					<input type="text" class="form-control border border-primary" placeholder="Enter your user name" id="name" name="name" required>
                     <!-- value="<?php echo $name; ?>" -->
 				</div><br>
 				<div class="form-group">
 					<label class="control-label fw-bold">Email</label>
-					<input type="email" class="form-control border border-primary" id="name" name="username" required>
+					<input type="email" class="form-control border border-primary" placeholder="Enter your email" id="name" name="username" required>
 				</div><br>
 				<div class="form-group">
 					<label class="control-label fw-bold">Birthday</label>
-					<input type="date" class="form-control border border-primary" id="contact" name="contact" required>
+					<input type="date" class="form-control border border-primary" placeholder="Enter your dob" id="contact" name="contact" required>
 				</div><br>
 				<div class="form-group">
 					<label class="control-label fw-bold">Address</label>
-					<textarea name="text" class="text-jqte form-control border border-primary"></textarea>
+					<textarea name="text" class="text-jqte form-control border border-primary" placeholder="Enter your address"></textarea>
         </div><br>
 				<div class="form-group">
 					<label class="control-label fw-bold">Gender</label>
-					<input type="about" class="form-control border border-primary" name="gender">
+					<input type="about" class="form-control border border-primary" placeholder="Enter your gender" name="gender">
 				</div><br>
                 <div class="form-group">
 					<label class="control-label fw-bold">Education</label>
-					<input type="text" class="form-control border border-primary" name="">
+					<input type="text" class="form-control border border-primary" placeholder="Enter your education" name="">
 				</div><br>		
                 <div class="form-group">
 					<label class="control-label fw-bold">Work Experience</label>
-					<input type="text" class="form-control border border-primary" name="">
+					<input type="text" class="form-control border border-primary" placeholder="Enter your work experience" name="">
 				</div><br>	
                 <div class="form-group">
 					<label  class="control-label fw-bold">Contact</label>
-					<input type="contact" class="form-control border border-primary" id="email" name="email" required>
+					<input type="contact" class="form-control border border-primary" placeholder="Enter your contact" id="email" name="email" required>
 				</div><br>
                 <div class="form-group">
 					<label  class="control-label fw-bold">Password</label>
-					<input type="password" class="form-control border border-primary" id="email" name="password" required>
+					<input type="password" class="form-control border border-primary"placeholder="Enter your password"  id="email" name="password" required>
 				</div><br>
         <div  class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button class="btn btn-primary btn-block col-md-2">Save</button>

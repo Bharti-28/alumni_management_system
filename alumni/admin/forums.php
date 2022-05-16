@@ -26,7 +26,7 @@
 				<div class="card-header">
 						<h5 class="fw-bold">Forums</h5>
 					<div class="d-md-flex justify-content-md-end">
-        <button type="submit" class="btn btn-primary btn-sm col-sm-2"><a href="add_forums.php">+ New Job</a></button>
+        <button type="submit" class="btn btn-primary btn-sm col-sm-2"><a href="add_forums.php">+ New Forum</a></button>
         </div>
 					<div class="card-body">
 						
@@ -82,7 +82,7 @@
 									</td>
 									<td class="text-center">
 										<a class="btn btn-sm btn-primary view_forum" href="viewforums.php" target="_blank" data-id="<?php echo $row['id'] ?>" >View</a>
-										<button class="btn btn-sm btn-success edit_forum" type="button" data-id="<?php echo $row['id'] ?>" >Edit</button> <br>
+										<button class="btn btn-sm btn-success edit_forum" type="button"  style="height: 2rem;"><a href="add_forums.php?id=<?Php echo $row['id'] ?> &type=edit">Edit</a></button> <br>
 										<button class="btn btn-sm btn-danger delete_forum" type="button" style="height: 2rem;"><a href="forums.php?id=<?Php echo $row['id'] ?> &type=delete">Delete</a></button>
 									</td>
 								</tr>

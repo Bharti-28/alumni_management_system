@@ -1,5 +1,21 @@
 <?Php
   require("code.php"); 
+
+  $title='';
+  $schedule='';
+  $content='';
+
+  if(isset($_GET['id'])) {
+        $id = mysqli_real_escape_string($connection, $_GET['id']);
+        $res = mysqli_query($connection, "SELECT * from events where id= '$id' ");
+
+        $row = mysqli_fetch_assoc($res);
+        $title = $row['title'];
+        $schedule = $row['schedule'];
+        $content = $row['content'];
+
+  }
+
   if(isset($_POST['title'], $_POST['schedule'], $_POST['content'])) {
         $title=mysqli_real_escape_string($connection,$_POST['title']);
         $schedule=mysqli_real_escape_string($connection,$_POST['schedule']);
@@ -37,23 +53,23 @@
                         <div class="card-header"><strong>New Event</div>
                         <div class="card-body card-block">
                         <form  method="post" action="" id="manage-career">
-				<input type="hidden" name="id" value="" c class="form-control border border-primary">
+				<input type="hidden" name="id" class="form-control border border-primary">
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Events</label>
-				<input type="text" name="title" class="form-control border border-primary">
+				<input type="text" name="title" value="<?Php echo $title?>" class="form-control border border-primary" placeholder="Enter event title">
 			</div>
 		</div> <br>
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Schedule</label>
-				<input type="text" name="schedule"  class="form-control border border-primary">
+				<input type="text" name="schedule"  value="<?Php echo $schedule?>" class="form-control border border-primary" placeholder="Enter event schedule">
 			</div>
 		</div><br>
 		<div class="row form-group">
 			<div class="col-md-10">
             <label  class="control-label" for="exampleFormControlTextarea1">Description</label>
-           <textarea class="form-control border border-primary" name="content" type="text" value="<?Php echo $description ?>" id="exampleFormControlTextarea1" rows="3"></textarea>
+           <textarea class="form-control border border-primary" value="<?Php echo $content ?>" placeholder="Enter event description" name="content" type="text"  id="exampleFormControlTextarea1" rows="3"></textarea>
 		</div>
        <div> <br><br><br>
        <div class="d-grid gap-2 d-md-flex justify-content-md-end"> <br>

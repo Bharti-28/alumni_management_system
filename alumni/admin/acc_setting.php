@@ -30,13 +30,13 @@
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Name</label>
-				<input type="text" name="name"  class="form-control border border-primary" value="<?php echo isset($title) ? $title:'' ?>">
+				<input type="text" name="name"  class="form-control border border-primary" placeholder="Enter your name" value="<?php echo isset($title) ? $title:'' ?>">
 			</div>
 		</div><br>
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Username</label>
-				<input type="text" name="username"  class="form-control border border-primary" value="<?php echo isset($title) ? $title:'' ?>">
+				<input type="text" name="username"  class="form-control border border-primary" placeholder="Enter your username" value="<?php echo isset($title) ? $title:'' ?>">
 			</div>
 		</div> <br>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end"> <br>

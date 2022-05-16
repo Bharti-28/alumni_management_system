@@ -6,21 +6,18 @@
 
 
 <div class="container"> <br> <br>
-<h3 class="t-10 mx-auto text-white text-center py-4 my-4" style="width: 200px;">Forums</h3> <hr>
+<h2 class="t-10 mx-auto text-white text-center py-4 my-4" style="width: 200px;">Forums</h2> <hr>
 
 <div class="container">
               <div class="card mb-4 mt-4">
               <div class="card-body">
                   <div class="row">
-                      <div class="col-md-8">
-                          <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" id="filter-field"><i class="fa fa-search"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="filter" placeholder="Filter name,course, etc." aria-label="Filter" aria-describedby="filter-field">
+                  <div class="col-md-10"> 
+                          <div class="input-group mb-3 ">
+                            <input type="text" class="form-control" id="filter" placeholder="Filter alumni/alumnus" aria-label="Filter" aria-describedby="filter-field">
                           </div>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-2">
                           <button class="btn btn-primary btn-block btn-sm" id="search">Search</button>
                       </div>
                   </div>
@@ -37,7 +34,7 @@
     <div class="card mb-4">
     	<div class="card-body">
     	
-    				<h3 class="text-center"><b><?php echo $row['title'] ?></b></h3>
+    				<h4 class="text-center"><b><?php echo $row['title'] ?></b></h4>
     			</div>
     		
     			<div class="container">

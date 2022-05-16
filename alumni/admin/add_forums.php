@@ -1,6 +1,18 @@
 <?Php
   require("code.php"); 
-  $msg="";
+
+  $title='';
+  $description='';
+
+  if(isset($_GET['id'])) {
+        $id = mysqli_real_escape_string($connection, $_GET['id']);
+        $res = mysqli_query($connection, "select * from forum_topics where id= '$id' ");
+
+        $row = mysqli_fetch_assoc($res);
+        $title = $row['title'];
+        $description = $row['description'];
+
+  }
 
   if(isset($_POST['title'], $_POST['description'])) {
         $title=mysqli_real_escape_string($connection,$_POST['title']);
@@ -35,7 +47,7 @@
             <div class="animated fadeIn">
                <div class="row">
                   <div class="col-lg-6">
-                     <div class="card"> <div><?Php echo $msg="" ?></div>
+                     <div class="card"> <div></div>
                         <div class="card-header"><strong>New Forum</div>
                         <div class="card-body card-block">
               
@@ -46,13 +58,13 @@
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Title</label>
-				<input type="text" name="title"  class="form-control border border-primary" value="<?php echo isset($title) ? $title:'' ?>">
+				<input type="text" name="title"  class="form-control border border-primary" placeholder="Enter forum title" value="<?php echo isset($title) ? $title:'' ?>">
 			</div>
 		</div><br>
 		<div class="row form-group">
 			<div class="col-md-12">
 				<label class="control-label">Description</label>
-				<textarea name="description"  class="form-control border border-primary"><?php echo isset($description) ? $description : '' ?></textarea>
+				<textarea name="description"  class="form-control border border-primary" placeholder="Enter forum description"><?php echo isset($description) ? $description : '' ?></textarea>
 			</div>
 		</div> <br>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end"> <br>

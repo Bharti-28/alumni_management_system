@@ -5,10 +5,22 @@
 <?Php
   include("dashboard.html");
   require("code.php"); 
+
+  $course='';
+
+  if(isset($_GET['id'])) {
+        $id = mysqli_real_escape_string($connection, $_GET['id']);
+        $res = mysqli_query($connection, "select * from courses where id= '$id' ");
+
+        $row = mysqli_fetch_assoc($res);
+        $course = $row['course'];
+
+  }
+
   if(isset($_POST['course'])) {
         $course=mysqli_real_escape_string($connection,$_POST['course']);
         mysqli_query($connection, "INSERT INTO courses (course) values('$course') ");
-         header('location: courselist.php');
+        header('location: courselist.php');
         die();
       }
 ?>
@@ -33,7 +45,7 @@
                            <form method="post">
 							   <div class="form-group">
 							
-								<input type="text" value="" name="course" placeholder="Enter your course name" class="form-control border border-primary" required></div>
+								<input type="text" value="<?Php echo $course?>" name="course" placeholder="Enter your course name" class="form-control border border-primary" required></div>
 							   <br>
 							   <button  type="submit" class="btn btn-primary">
 							   Submit

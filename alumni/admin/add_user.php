@@ -1,5 +1,19 @@
 <?Php
   require("code.php"); 
+
+  $name='';
+  $username='';
+
+  if(isset($_GET['id'])) {
+        $id = mysqli_real_escape_string($connection, $_GET['id']);
+        $res = mysqli_query($connection, "select * from users where id= '$id' ");
+
+        $row = mysqli_fetch_assoc($res);
+        $name = $row['name'];
+        $username = $row['username'];
+
+  }
+
   if(isset($_POST['name'], $_POST['username'], $_POST['password'], $_POST['type'])) {
         $name=mysqli_real_escape_string($connection,$_POST['name']);
         $username=mysqli_real_escape_string($connection,$_POST['username']);
@@ -40,26 +54,19 @@
 	<div id="msg"></div>
 	
 	<form method="post" id="manage-user">	
-		<input type="hidden" name="id" value="<?php echo isset($meta['id']) ? $meta['id']: '' ?>">
+		<input type="hidden" name="id">
 		<div class="form-group">
 			<label for="name">Name</label>
-			<input type="text" name="name" id="name" class="form-control border border-primary" value="<?php echo isset($meta['name']) ? $meta['name']: '' ?>" required>
+			<input type="text" name="name" value="<?Php echo $name?>" id="name" class="form-control border border-primary" placeholder="Enter your name" required>
 		</div> <br>
 		<div class="form-group">
 			<label for="username">Username</label>
-			<input type="text" name="username" id="username" class="form-control border border-primary" value="<?php echo isset($meta['username']) ? $meta['username']: '' ?>" required  autocomplete="off">
+			<input type="text" name="username" value="<?Php echo $username?>" id="username" class="form-control border border-primary"  placeholder="Enter your username" required  autocomplete="off">
 		</div><br>
 		<div class="form-group">
 			<label for="password">Password</label>
-			<input type="password" name="password" id="password" class="form-control border border-primary" value="" autocomplete="off">
-			<?php if(isset($meta['id'])): ?>
-			<small><i>Leave this blank if you dont want to change the password.</i></small>
-		<?php endif; ?>
+			<input type="password" name="password" id="password" class="form-control border border-primary"  placeholder="Enter your password" value="" autocomplete="off">
 		</div><br>
-		<?php if(isset($meta['type']) && $meta['type'] == 3): ?>
-			<input type="hidden" name="type" value="3">
-		<?php else: ?>
-		<?php if(!isset($_GET['mtype'])): ?>
 		<div class="form-group">
 			<label for="type">User Type</label>
 			<select name="type" id="type" class="custom-select">
@@ -67,8 +74,6 @@
 				<option value="1" <?php echo isset($meta['type']) && $meta['type'] == 1 ? 'selected': '' ?>>Admin</option>
 			</select>
 		</div>
-		<?php endif; ?>
-		<?php endif; ?>
 		<div class="d-grid gap-2 d-md-flex justify-content-md-end"> <br>
         <button type="submit" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-secondary">cancel</button>

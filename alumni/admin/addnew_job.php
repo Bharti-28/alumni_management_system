@@ -1,5 +1,21 @@
 <?Php
   require("code.php"); 
+
+  
+  $company='';
+  $job_title='';
+
+  if(isset($_GET['id'])) {
+        $id = mysqli_real_escape_string($connection, $_GET['id']);
+        $res = mysqli_query($connection, "select * from careers where id= '$id' ");
+
+        $row = mysqli_fetch_assoc($res);
+        $company = $row['company'];
+        $job_title = $row['job_title'];
+
+  }
+
+
   if(isset($_POST['company'], $_POST['job_title'], $_POST['location'], $_POST['description'])) {
         $company=mysqli_real_escape_string($connection,$_POST['company']);
         $job_title=mysqli_real_escape_string($connection,$_POST['job_title']);
@@ -41,25 +57,25 @@
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Company</label>
-				<input type="text" name="company"  class="form-control border border-primary" value="">
+				<input type="text" name="company" value="<?Php echo $company?>"  class="form-control border border-primary" placeholder="Enter your company name" value="">
 			</div>
 		</div> <br>
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Job Title</label>
-				<input type="text" name="job_title"  class="form-control border border-primary" value="">
+				<input type="text" name="job_title"  value="<?Php echo $job_title?>"   class="form-control border border-primary"  placeholder="Enter job title" value="">
 			</div>
 		</div><br>
 		<div class="row form-group">
 			<div class="col-md-8">
 				<label class="control-label">Location</label>
-				<input type="text" name="location" class="form-control border border-primary" value="">
+				<input type="text" name="location" class="form-control border border-primary"  placeholder="Enter your location" value="">
 			</div>
 		</div> <br>
 		<div class="row form-group">
 			<div class="col-md-10">
             <label  class="control-label" for="exampleFormControlTextarea1">Description</label>
-           <textarea class="form-control border border-primary" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+           <textarea class="form-control border border-primary"  placeholder="Enter description" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
 		</div>
        <div> <br><br><br>
        <div class="d-grid gap-2 d-md-flex justify-content-md-end"> <br>

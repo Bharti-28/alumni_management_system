@@ -77,8 +77,7 @@
 										 
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary view_career" type="button" style="height: 2rem;" data-id="<?php echo $row['id'] ?>" ><a href="viewjob.php">View</a></button>
-										<button class="btn btn-sm btn-success edit_career" type="button" style="height: 2rem;" data-id="<?php echo $row['id'] ?>" >Edit</button>
+										<button class="btn btn-sm btn-success edit_career" type="button" style="height: 2rem;" ><a href="addnew_job.php?id=<?Php echo $row['id'] ?> &type=edit">Edit</a></button>
 										<button class="btn btn-sm btn-danger delete_career" type="button" style="height: 2rem;"><a href="joblist.php?id=<?Php echo $row['id'] ?> &type=delete">Delete</a></button>
 									</td>
 								</tr>

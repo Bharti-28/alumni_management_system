@@ -82,7 +82,7 @@
 									</td>
 									<td class="text-center">
 										<button class="btn btn-sm btn-primary view_event" type="button" style="height: 2rem;" ><a href="viewevents.php">View</a></button>
-										<button class="btn btn-sm btn-success edit_event" type="button" style="height: 2rem;" ><a href="add_events.php">Edit</a></button>
+										<button class="btn btn-sm btn-success edit_event" type="button" style="height: 2rem;" ><a href="add_events.php?id=<?Php echo $row['id'] ?> &type=edit">Edit</a></button>
 										<button class="btn btn-sm btn-danger delete_event" type="button" style="height: 2rem;"><a href="events.php?id=<?Php echo $row['id'] ?> &type=delete">Delete</a></button>
 									</td>
 								</tr>
@@ -114,7 +114,7 @@
 
 
 <?Php 
-  include("footer.html")
+  include("includes/footer.html")
 ?>
   </div>
 </div>

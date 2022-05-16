@@ -23,9 +23,13 @@
 			</div>
 		</div>
          <div>
-			 <br><h5 class="fw-bold">Course List</h5><br> 
-			 <br><button class="badge bg-primary text-wrap" style="height: 2rem;"><a href="add_course.php">Add Course</a></button>
-      <br> <hr> <br>
+         <div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+			 <br><h5 class="fw-bold">Course List</h5> 
+       <div class="d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-primary btn-sm col-sm-2"><a href="add_alumni.php">+ New Course</a></button>
+        </div> <br>
 		 <table class="table table-bordered table-primary">
   <thead>
     <tr>
